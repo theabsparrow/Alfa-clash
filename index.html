@@ -50,21 +50,21 @@
     <!-- main section starts -->
     <main class="bg-[#010313] bg-[url(images/background.png)] min-h-screen bg-no-repeat bg-center">
         <!-- start section starts -->
-        <section class="flex flex-col items-center justify-center pt-[200px] lg:pt-[150px] hidden">
+        <section class="flex flex-col items-center justify-center pt-[200px] lg:pt-[150px]">
             <h1 class="text-white text-[65px] lg:text-[170px] leading-[55px] lg:leading-[256px] font-anton">ALPHABET
                 CLASH</h1>
             <p
                 class="text-white text-center text-[24px] font-poppins font-medium leading-[120%] mb-8 lg:mb-[56px] mt-7 lg:mt-0">
                 Unleash Your Keyboard Kung Fu : Press “Enter” to Play</p>
             <div>
-                <button class="btn text-[#010313] text-[24px] font-semibold font-poppins leading-[120%]">Play
+                <button class="btn text-[#010313] text-[24px] font-semibold font-poppins leading-[120%] border-none">Play
                     Now</button>
             </div>
         </section>
         <!-- start section ends -->
 
         <!-- playground section starts -->
-        <section>
+        <section class="hidden">
 
             <div class="flex flex-col items-center pt-10 lg:pt-24">
                 <!-- artboard section starts -->
@@ -146,6 +146,16 @@
             </div>            
         </section>
         <!-- playground section ends -->
+
+        <!-- final score section starts -->
+        <section class="flex items-center justify-center min-h-screen hidden">
+            <div class= "bg-[#FFFFFF33] flex flex-col items-center p-4 rounded-xl">
+                <h1 class="text-white font-extrabold font-poppins text-[64px] mb-4">Score : <span class="font-medium">14</span></h1>
+                <button class="btn text-[#010313] text-[24px] font-semibold font-poppins bg-white border-none">Start Again</button>
+                <p class="text-xl font-medium text-white font-poppins mt-4">Practice will make you Pro</p>
+            </div>
+        </section>
+        <!-- final score section ends -->
     </main>
     <!-- main section ends -->
 </body>
