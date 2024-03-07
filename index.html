@@ -148,10 +148,11 @@
         <!-- playground section ends -->
 
         <!-- final score section starts -->
-        <section class="flex items-center justify-center min-h-screen hidden">
+        <section id="end-game" class="flex items-center justify-center min-h-screen hidden">
             <div class= "bg-[#FFFFFF33] flex flex-col items-center p-4 rounded-xl">
-                <h1 class="text-white font-extrabold font-poppins text-[64px] mb-4">Score : <span class="font-medium">14</span></h1>
-                <button class="btn text-[#010313] text-[24px] font-semibold font-poppins bg-white border-none">Start Again</button>
+                <h2 class="text-white font-extrabold font-poppins text-[64px] mb-4">Game Over!!</h2>
+                <h1 class="text-white font-extrabold font-poppins text-[64px] mb-4">Score : <span id="final-score" class="font-medium">0</span></h1>
+                <button onclick="playGame()" class="btn text-[#010313] text-[24px] font-semibold font-poppins bg-white border-none">Start Again</button>
                 <p class="text-xl font-medium text-white font-poppins mt-4">Practice will make you Pro</p>
             </div>
         </section>

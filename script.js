@@ -36,6 +36,17 @@ function contineuTheGame () {
   
 }
 
+function getTheValue (valueId){
+    const getTheValue = document.getElementById(valueId)
+    const getTheValueText = getTheValue.innerText;
+    const getTheValueNum = parseInt(getTheValueText);
+    return getTheValueNum;
+}
+function setTheInnerText (elementId , value){
+    const theElement = document.getElementById(elementId);
+    theElement.innerText = value;
+}
+
 function userpressedkey (event){
     const pressedKey = event.key;
     const desireAlphabet = document.getElementById("desire-alphabet");
@@ -44,27 +55,44 @@ function userpressedkey (event){
     if(pressedKey === desireKey){
         contineuTheGame()
         removeColorOfAlphabet(desireKey)
-        const defaultValue = document.getElementById("default-value")
-        const defaultScore = defaultValue.innerText;
-        const defaultScoreNum = parseInt(defaultScore);
-        const setNewScore = defaultScoreNum + 1;
-        defaultValue.innerText = setNewScore;
-        
+        const showScore = getTheValue("default-value")
+        const theScore = showScore + 1;
+        setTheInnerText("default-value" , theScore)   
     }
     else{
-       const initialLife = document.getElementById("initial-life");
-       const initialLifeText = initialLife.innerText;
-       const initialLifeNum = parseInt(initialLifeText);
-       const reduceInitialLIfe = initialLifeNum - 1;
-       initialLife.innerText = reduceInitialLIfe;
+        const theLife = getTheValue("initial-life");
+        const decreaseLife = theLife - 1;
+        setTheInnerText("initial-life", decreaseLife)
+      if(decreaseLife < 0){
+        gameOver()
+      }
     }
 }
 document.addEventListener ("keyup" , userpressedkey)
 
+function playGroundHide (elementId) {
+    const playGround = document.getElementById(elementId);
+    playGround.classList.add("hidden")
+}
 
+function endGame (elementId) {
+    const playGround = document.getElementById(elementId);
+    playGround.classList.remove("hidden")
+}
+
+function gameOver (){
+    endGame("end-game")
+    playGroundHide("play-ground")
+     const finalScore = getTheValue("default-value")
+     setTheInnerText("final-score" , finalScore)
+
+}
 
 function playGame (){
     startTheGame()
     playGround()
+    setTheInnerText("default-value" , 0)
+    setTheInnerText("initial-life", 6)
     contineuTheGame()
+    playGroundHide("end-game")
 }
